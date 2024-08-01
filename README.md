@@ -19,8 +19,15 @@ See [Vite Configuration Reference](https://vitejs.dev/config/).
 ## Project Setup
 
 ```sh
-npm install
+npm install --legacy-peer-deps
 ```
+## install pnpm
+
+npm install -g pnpm
+
+## add vite
+
+pnpm add vue vite
 
 ### Compile and Hot-Reload for Development
 
