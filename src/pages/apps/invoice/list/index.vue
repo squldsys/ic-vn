@@ -138,7 +138,7 @@ const resolveInvoiceStatusVariantAndIcon = status => {
       variant: 'error',
       icon: 'tabler-help',
     }
-  
+
   return {
     variant: 'secondary',
     icon: 'tabler-x',
