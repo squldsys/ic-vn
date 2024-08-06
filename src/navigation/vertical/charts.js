@@ -1,11 +1,13 @@
 export default [
-  { heading: 'Charts' },
+  { heading: '基本設定' },
   {
-    title: 'Charts',
-    icon: { icon: 'tabler-chart-donut-2' },
+    title: '基本設定メニュー',
+    icon: { icon: 'tabler-adjustments-alt' },
     children: [
-      { title: 'Apex Chart', to: 'charts-apex-chart' },
-      { title: 'Chartjs', to: 'charts-chartjs' },
+      { title: 'システ設定', to: 'charts-apex-chart' },
+      { title: 'ユーザー管理', to: 'charts-chartjs' },
+      { title: '代理店管理', to: 'charts-chartjs' },
+      { title: '権限設定', to: 'charts-chartjs' },
     ],
   },
 ]

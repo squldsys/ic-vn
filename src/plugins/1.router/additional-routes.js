@@ -1,6 +1,7 @@
 const emailRouteComponent = () => import('@/pages/apps/email/index.vue')
 
 // 👉 Redirects
+// sua router o day
 export const redirects = [
   // ℹ️ We are redirecting to different pages based on role.
   // NOTE: Role is just for UI purposes. ACL is based on abilities.

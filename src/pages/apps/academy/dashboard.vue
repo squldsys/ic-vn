@@ -1,40 +1,33 @@
 <script setup>
-import AcademyAssignmentProgress from '@/views/apps/academy/AcademyAssignmentProgress.vue'
-import AcademyCardPopularInstructors from '@/views/apps/academy/AcademyCardPopularInstructors.vue'
-import AcademyCardTopCourses from '@/views/apps/academy/AcademyCardTopCourses.vue'
-import AcademyCourseTable from '@/views/apps/academy/AcademyCourseTable.vue'
-import AcademyTopicYouAreInterested from '@/views/apps/academy/AcademyTopicYouAreInterested.vue'
-import AcademyUpcomingWebinar from '@/views/apps/academy/AcademyUpcomingWebinar.vue'
-import customCheck from '@images/svg/Check.svg'
-import customLaptop from '@images/svg/laptop.svg'
-import customLightbulb from '@images/svg/lightbulb.svg'
-
+import AcademyAssignmentProgress from "@/views/apps/academy/AcademyAssignmentProgress.vue";
+import AcademyCardPopularInstructors from "@/views/apps/academy/AcademyCardPopularInstructors.vue";
+import AcademyCardTopCourses from "@/views/apps/academy/AcademyCardTopCourses.vue";
+import AcademyCourseTable from "@/views/apps/academy/AcademyCourseTable.vue";
+import AcademyTopicYouAreInterested from "@/views/apps/academy/AcademyTopicYouAreInterested.vue";
+import AcademyUpcomingWebinar from "@/views/apps/academy/AcademyUpcomingWebinar.vue";
+import customCheck from "@images/svg/Check.svg";
+import customLaptop from "@images/svg/laptop.svg";
+import customLightbulb from "@images/svg/lightbulb.svg";
+import * as demoCode from "@/views/demos/forms/tables/simple-table/demoCodeSimpleTable";
 const donutChartColors = {
   donut: {
-    series1: '#22A95E',
-    series2: '#24B364',
-    series3: '#56CA00',
-    series4: '#53D28C',
-    series5: '#7EDDA9',
-    series6: '#A9E9C5',
+    series1: "#22A95E",
+    series2: "#24B364",
+    series3: "#56CA00",
+    series4: "#53D28C",
+    series5: "#7EDDA9",
+    series6: "#A9E9C5",
   },
-}
+};
 
 const timeSpendingChartConfig = {
   chart: {
     height: 157,
     width: 130,
     parentHeightOffset: 0,
-    type: 'donut',
+    type: "donut",
   },
-  labels: [
-    '36h',
-    '56h',
-    '16h',
-    '32h',
-    '56h',
-    '16h',
-  ],
+  labels: ["36h", "56h", "16h", "32h", "56h", "16h"],
   colors: [
     donutChartColors.donut.series1,
     donutChartColors.donut.series2,
@@ -47,7 +40,7 @@ const timeSpendingChartConfig = {
   dataLabels: {
     enabled: false,
     formatter(val) {
-      return `${ Number.parseInt(val) }%`
+      return `${Number.parseInt(val)}%`;
     },
   },
   legend: { show: false },
@@ -56,42 +49,37 @@ const timeSpendingChartConfig = {
   plotOptions: {
     pie: {
       donut: {
-        size: '75%',
+        size: "75%",
         labels: {
           show: true,
           value: {
-            fontSize: '1.125rem',
-            color: 'rgba(var(--v-theme-on-background), var(--v-high-emphasis-opacity))',
+            fontSize: "1.125rem",
+            color:
+              "rgba(var(--v-theme-on-background), var(--v-high-emphasis-opacity))",
             fontWeight: 500,
             offsetY: -15,
             formatter(val) {
-              return `${ Number.parseInt(val) }%`
+              return `${Number.parseInt(val)}%`;
             },
           },
           name: { offsetY: 20 },
           total: {
             show: true,
-            fontSize: '15px',
-            label: 'Total',
-            color: 'rgba(var(--v-theme-on-background), var(--v-disabled-opacity))',
+            fontSize: "15px",
+            label: "Total",
+            color:
+              "rgba(var(--v-theme-on-background), var(--v-disabled-opacity))",
             formatter() {
-              return '231h'
+              return "231h";
             },
           },
         },
       },
     },
   },
-}
+};
 
-const timeSpendingChartSeries = [
-  23,
-  35,
-  10,
-  20,
-  35,
-  23,
-]
+const timeSpendingChartSeries = [23, 35, 10, 20, 35, 23];
 </script>
 
 <template>
@@ -108,20 +96,34 @@ const timeSpendingChartSeries = [
             Welcome back,<span class="text-h4"> Felecia 👋🏻 </span>
           </h5>
 
-          <div
-            class="text-wrap text-body-1"
-            style="max-inline-size: 360px;"
-          >
-            Your progress this week is Awesome. let's keep it up
-            and get a lot of points reward!
+          <div class="text-wrap text-body-1" style="max-inline-size: 360px">
+            Your progress this week is Awesome. let's keep it up and get a lot
+            of points reward!
           </div>
 
-          <div class="d-flex justify-space-between flex-wrap gap-4 flex-column flex-md-row mt-4">
+          <div
+            class="d-flex justify-space-between flex-wrap gap-4 flex-column flex-md-row mt-4"
+          >
             <div
               v-for="{ title, value, icon, color } in [
-                { title: 'Hours Spent', value: '34h', icon: customLaptop, color: 'primary' },
-                { title: 'Test Results', value: '82%', icon: customLightbulb, color: 'info' },
-                { title: 'Course Completed', value: '14', icon: customCheck, color: 'warning' },
+                {
+                  title: 'Hours Spent',
+                  value: '34h',
+                  icon: customLaptop,
+                  color: 'primary',
+                },
+                {
+                  title: 'Test Results',
+                  value: '82%',
+                  icon: customLightbulb,
+                  color: 'info',
+                },
+                {
+                  title: 'Course Completed',
+                  value: '14',
+                  icon: customCheck,
+                  color: 'warning',
+                },
               ]"
               :key="title"
             >
@@ -133,19 +135,13 @@ const timeSpendingChartSeries = [
                   size="54"
                   class="text-primary me-4"
                 >
-                  <VIcon
-                    :icon="icon"
-                    size="38"
-                  />
+                  <VIcon :icon="icon" size="38" />
                 </VAvatar>
                 <div>
                   <h6 class="text-h6 text-medium-emphasis">
                     {{ title }}
                   </h6>
-                  <h4
-                    class="text-h4"
-                    :class="`text-${color}`"
-                  >
+                  <h4 class="text-h4" :class="`text-${color}`">
                     {{ value }}
                   </h4>
                 </div>
@@ -156,29 +152,19 @@ const timeSpendingChartSeries = [
       </VCol>
 
       <!-- 👉 Time Spending -->
-      <VCol
-        cols="12"
-        md="4"
-      >
+      <VCol cols="12" md="4">
         <div class="d-flex justify-space-between align-center">
           <div class="d-flex flex-column ps-3">
-            <h5 class="text-h5 mb-1 text-no-wrap">
-              Time Spending
-            </h5>
-            <div class="text-body-1 mb-7">
-              Weekly Report
-            </div>
+            <h5 class="text-h5 mb-1 text-no-wrap">Time Spending</h5>
+            <div class="text-body-1 mb-7">Weekly Report</div>
             <h4 class="text-h4 mb-2">
-              231<span class="text-medium-emphasis">h</span> 14<span class="text-medium-emphasis">m</span>
+              231<span class="text-medium-emphasis">h</span> 14<span
+                class="text-medium-emphasis"
+                >m</span
+              >
             </h4>
             <div>
-              <VChip
-                color="success"
-                label
-                size="small"
-              >
-                +18.4%
-              </VChip>
+              <VChip color="success" label size="small"> +18.4% </VChip>
             </div>
           </div>
           <div>
@@ -196,51 +182,45 @@ const timeSpendingChartSeries = [
 
     <VRow class="match-height">
       <!-- 👉 Topics you are interested in -->
-      <VCol
-        cols="12"
-        md="8"
-      >
+      <VCol cols="12" md="8">
         <!-- 👉 Topic You are Interested in -->
         <AcademyTopicYouAreInterested />
       </VCol>
 
       <!-- 👉 Popular Instructors  -->
-      <VCol
-        cols="12"
-        md="4"
-        sm="6"
-      >
+      <VCol cols="12" md="4" sm="6">
         <AcademyCardPopularInstructors />
       </VCol>
 
       <!-- 👉 Academy Top Courses  -->
-      <VCol
-        cols="12"
-        md="4"
-        sm="6"
-      >
+      <VCol cols="12" md="4" sm="6">
         <AcademyCardTopCourses />
       </VCol>
 
       <!-- 👉 Academy Upcoming Webinar -->
-      <VCol
-        cols="12"
-        md="4"
-        sm="6"
-      >
+      <VCol cols="12" md="4" sm="6">
         <AcademyUpcomingWebinar />
       </VCol>
 
       <!-- 👉 Academy Assignment Progress  -->
-      <VCol
-        cols="12"
-        md="4"
-        sm="6"
-      >
+      <VCol cols="12" md="4" sm="6">
         <AcademyAssignmentProgress />
       </VCol>
 
       <!-- 👉 Academy Course Table  -->
+      <VCol>
+        <AcademyCourseTable />
+      </VCol>
+      <!-- <VCol cols="12">
+        <AppCardCode title="Height" :code="demoCode.height" no-padding>
+          <VCardText>
+            You can set the height of the table by using the
+            <code>height</code> prop.
+          </VCardText>
+          <DemoSimpleTableHeight />
+        </AppCardCode>
+      </VCol> -->
+
       <VCol>
         <AcademyCourseTable />
       </VCol>

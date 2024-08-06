@@ -283,10 +283,10 @@ const resetCustomizer = async () => {
       <div class="customizer-heading d-flex align-center justify-space-between">
         <div>
           <h6 class="text-h6">
-            Theme Customizer
+            表示のカスタマイズ
           </h6>
           <p class="text-body-2 mb-0">
-            Customize & Preview in Real Time
+            メニューと表示スタイルの変更
           </p>
         </div>
 
@@ -337,11 +337,11 @@ const resetCustomizer = async () => {
       >
         <!-- SECTION Theming -->
         <CustomizerSection
-          title="Theming"
+          title="表示テーマ"
           :divider="false"
         >
           <!-- 👉 Primary Color -->
-          <div class="d-flex flex-column gap-2">
+          <!-- <div class="d-flex flex-column gap-2">
             <h6 class="text-h6">
               Primary Color
             </h6>
@@ -361,7 +361,7 @@ const resetCustomizer = async () => {
                 class="primary-color-wrapper cursor-pointer"
                 :class="vuetifyTheme.current.value.colors.primary === color.main ? 'active' : ''"
                 :style="vuetifyTheme.current.value.colors.primary === color.main ? `outline-color: ${color.main}; outline-width:2px;` : `--v-color:${color.main}`"
-                @click="setPrimaryColor(color)"
+                @click="()=> {setPrimaryColor(color)}"
               >
                 <div
                   style="border-radius: 0.375rem;block-size: 2.125rem; inline-size: 1.8938rem;"
@@ -410,12 +410,12 @@ const resetCustomizer = async () => {
                 </VMenu>
               </div>
             </div>
-          </div>
+          </div> -->
 
           <!-- 👉 Theme -->
           <div class="d-flex flex-column gap-2">
             <h6 class="text-h6">
-              Theme
+              外観モード (Mode)
             </h6>
 
             <CustomRadiosWithImage
@@ -447,7 +447,7 @@ const resetCustomizer = async () => {
           <!-- 👉 Skin -->
           <div class="d-flex flex-column gap-2">
             <h6 class="text-h6">
-              Skins
+              スタイル
             </h6>
 
             <CustomRadiosWithImage
@@ -486,11 +486,11 @@ const resetCustomizer = async () => {
         <!-- !SECTION -->
 
         <!-- SECTION LAYOUT -->
-        <CustomizerSection title="Layout">
+        <CustomizerSection title="レイアウト">
           <!-- 👉 Layouts -->
           <div class="d-flex flex-column gap-2">
             <h6 class="text-base font-weight-medium">
-              Layout
+              メニュー (サイド)
             </h6>
 
             <CustomRadiosWithImage
@@ -508,7 +508,7 @@ const resetCustomizer = async () => {
           <!-- 👉 Content Width -->
           <div class="d-flex flex-column gap-2">
             <h6 class="text-base font-weight-medium">
-              Content
+              コンテンツ
             </h6>
 
             <CustomRadiosWithImage
